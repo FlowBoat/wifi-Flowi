@@ -5,10 +5,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { FloWi } from './app.component';
+import { HubPage } from "../pages/hub/hub";
 
 @NgModule({
   declarations: [
-    FloWi
+    FloWi,
+    HubPage
   ],
   imports: [
     BrowserModule,
@@ -16,7 +18,8 @@ import { FloWi } from './app.component';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    FloWi
+    FloWi,
+    HubPage
   ],
   providers: [
     StatusBar,
