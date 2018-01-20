@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FloWi } from './app.component';
 import { HubPage } from '../pages/hub/hub';
@@ -18,6 +19,9 @@ import { DealsService } from '../services/deals.service';
 // Pipes
 import { DocPipe } from '../pipes/doc.pipe';
 
+// Components
+import { DealsCardComponent } from '../components/deals-card/deals-card';
+
 const config = {
   apiKey: "AIzaSyD_TECDbtRmwJTSGJcZQ85Q5YLuNdjRtdY",
   authDomain: "flowiapp.firebaseapp.com",
@@ -31,13 +35,15 @@ const config = {
   declarations: [
     FloWi,
     HubPage,
-    DocPipe
+    DocPipe,
+    DealsCardComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(FloWi),
     AngularFireModule.initializeApp(config, 'flowi'),
     AngularFirestoreModule.enablePersistence(),
+    BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
